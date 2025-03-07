@@ -4,22 +4,22 @@ let numOfColumns = 16;
 
 function generateCanvas(numOfRows, numOfColumns){
 
-    for(let i = numOfRows; i > 0; i--) {
-        
-        let div =  document.createElement('div');
-        div.textContent = "[ ]";
-        div.id = "node"
-        document.getElementById("gridContainer").appendChild(div);
-        /*
-        for(let i = numOfColumns; i >= 0; i--) {
+    let rowDiv =  document.createElement('div');
+    rowDiv.id = "rowDiv";
+    document.getElementById("gridContainer").appendChild(rowDiv);
 
-            let div =  document.createElement('div');
-            div.textContent = "Hello, World!";
+    for(let i = numOfColumns; i > 0; i--) {
 
-            document.getElementById("gridContainer").appendChild(div);
-        }
-        */
+        let columnDiv = document.createElement('div');
+        columnDiv.id = "columnDiv";
+        columnDiv.textContent = "[]";
+        document.getElementById("rowDiv").appendChild(columnDiv);
+
     }
+    let newLineRow = document.createElement('div');
+    newLineRow.id = "newLineRow";
+    document.getElementById("gridContainer").appendChild(newLineRow);
+
 }
 
 generateCanvas(numOfRows, numOfColumns);
